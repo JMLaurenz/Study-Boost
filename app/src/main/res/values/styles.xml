@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="StudyFormLabel">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginBottom">6dp</item>
+    <item name="android:textColor">@color/study_on_surface</item>
+    <item name="android:textSize">16sp</item>
+  </style>
+
+  <style name="StudyFormField" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+    <item name="hintEnabled">false</item>
+    <item name="boxCornerRadiusTopStart">12dp</item>
+    <item name="boxCornerRadiusTopEnd">12dp</item>
+    <item name="boxCornerRadiusBottomStart">12dp</item>
+    <item name="boxCornerRadiusBottomEnd">12dp</item>
+    <item name="boxStrokeColor">@color/study_form_stroke</item>
+  </style>
+
+  <style name="StudyFormDropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+    <item name="hintEnabled">false</item>
+    <item name="boxCornerRadiusTopStart">12dp</item>
+    <item name="boxCornerRadiusTopEnd">12dp</item>
+    <item name="boxCornerRadiusBottomStart">12dp</item>
+    <item name="boxCornerRadiusBottomEnd">12dp</item>
+    <item name="boxStrokeColor">@color/study_form_stroke</item>
+  </style>
+
+  <style name="StudyDifficultyOption" parent="Widget.AppCompat.CompoundButton.RadioButton">
+    <item name="android:layout_width">48dp</item>
+    <item name="android:layout_height">48dp</item>
+    <item name="android:minWidth">48dp</item>
+    <item name="android:minHeight">48dp</item>
+    <item name="android:button">@null</item>
+    <item name="android:background">@drawable/bg_difficulty_option</item>
+    <item name="android:textColor">@color/study_difficulty_text</item>
+    <item name="android:textSize">17sp</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:gravity">center</item>
+    <item name="android:padding">0dp</item>
+  </style>
+</resources>

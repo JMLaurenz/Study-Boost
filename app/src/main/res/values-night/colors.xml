@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <color name="study_primary">#58C8B2</color>
+  <color name="study_primary_dark">#0B806D</color>
+  <color name="study_on_primary">#FFFFFF</color>
+  <color name="study_difficulty_selected_text">#101B1D</color>
+  <color name="study_surface">#101B1D</color>
+  <color name="study_nav_surface">#1B2826</color>
+  <color name="study_surface_variant">#263331</color>
+  <color name="study_on_surface">#E8F1EE</color>
+  <color name="study_muted">#B6C6C1</color>
+  <color name="study_border">#6C7E79</color>
+  <color name="study_sage">#304536</color>
+  <color name="study_blue_tag">#5799E1</color>
+  <color name="study_lavender_tag">#A982E1</color>
+  <color name="study_amber_tag">#E3A33D</color>
+  <color name="study_rose_tag">#EBA5B3</color>
+  <color name="study_slate_tag">#89949F</color>
+  <color name="study_danger">#FFB4AB</color>
+</resources>
