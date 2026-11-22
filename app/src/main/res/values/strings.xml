@@ -40,6 +40,11 @@
   <string name="difficulty_3">3</string>
   <string name="difficulty_4">4</string>
   <string name="difficulty_5">5</string>
+  <string name="difficulty_option_1">Difficulty 1 of 5</string>
+  <string name="difficulty_option_2">Difficulty 2 of 5</string>
+  <string name="difficulty_option_3">Difficulty 3 of 5</string>
+  <string name="difficulty_option_4">Difficulty 4 of 5</string>
+  <string name="difficulty_option_5">Difficulty 5 of 5</string>
   <string name="color_ocean_blue">Ocean blue</string>
   <string name="color_sage_green">Sage green</string>
   <string name="color_soft_lavender">Soft lavender</string>
@@ -67,7 +72,8 @@
   <string name="time_2_hours">2 hours</string>
   <string name="time_3_hours">3 hours</string>
   <string name="task_subject">Subject</string>
-  <string name="mark_as_complete">Completed task</string>
+  <string name="choose_subject">Choose a subject</string>
+  <string name="mark_as_complete">Mark as completed</string>
   <string name="save_task">Save task</string>
   <string name="need_subject">Add a subject before saving a task.</string>
   <string name="manage_subjects">Manage subjects</string>

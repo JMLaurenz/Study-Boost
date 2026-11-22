@@ -3,7 +3,9 @@
   <color name="study_primary">#0B806D</color>
   <color name="study_primary_dark">#086653</color>
   <color name="study_on_primary">#FFFFFF</color>
+  <color name="study_difficulty_selected_text">#FFFFFF</color>
   <color name="study_surface">#FBFAF6</color>
+  <color name="study_nav_surface">#F4EDF7</color>
   <color name="study_surface_variant">#EEF1EA</color>
   <color name="study_on_surface">#122638</color>
   <color name="study_muted">#53606A</color>
