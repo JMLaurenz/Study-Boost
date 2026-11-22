@@ -1,45 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <!-- Search View -->
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchViewTasks"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:queryHint="Search by task title or subject..." />
-
-    <!-- RecyclerView for Tasks -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewTasks"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <!-- Empty-State Placeholder Layout (TC08) -->
-    <LinearLayout
-        android:id="@+id/layoutEmptyState"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@android:drawable/ic_menu_report_image" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No tasks found matching your criteria."
-            android:textSize="16sp"
-            android:layout_marginTop="8dp" />
-    </LinearLayout>
-
+<?xml version='1.0' encoding='utf-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/screenRoot" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="16dp">
+  <Button android:id="@+id/btnBack" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/back" />
+  <TextView android:id="@+id/tvHeading" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tasks" android:textSize="28sp" android:layout_marginBottom="8dp" android:textStyle="bold" android:accessibilityHeading="true" />
+  <Button android:id="@+id/btnAddTask" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/add_task" />
+  <androidx.appcompat.widget.SearchView android:id="@+id/searchViewTasks" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:contentDescription="@string/search_description" app:iconifiedByDefault="false" app:queryHint="@string/search_hint" />
+  <com.google.android.material.chip.ChipGroup android:id="@+id/statusChips" android:layout_width="match_parent" android:layout_height="wrap_content" app:singleSelection="true" app:selectionRequired="true">
+    <com.google.android.material.chip.Chip android:id="@+id/chipAll" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/all_statuses" android:checkable="true" />
+    <com.google.android.material.chip.Chip android:id="@+id/chipPending" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pending" android:checkable="true" />
+    <com.google.android.material.chip.Chip android:id="@+id/chipCompleted" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/completed" android:checkable="true" />
+  </com.google.android.material.chip.ChipGroup>
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/subject_filter" android:textSize="16sp" android:layout_marginBottom="8dp" android:labelFor="@id/spinnerSubject" />
+  <Spinner android:id="@+id/spinnerSubject" android:layout_width="match_parent" android:layout_height="48dp" />
+  <TextView android:id="@+id/tvTaskCount" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/tasks" android:textSize="16sp" android:layout_marginBottom="8dp" />
+  <include layout="@layout/view_empty" />
+  <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerViewTasks" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:clipToPadding="false" />
 </LinearLayout>

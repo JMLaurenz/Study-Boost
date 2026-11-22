@@ -1,50 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Academic Subject"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="24dp" />
-
-    <!-- Subject Code Input -->
-    <EditText
-        android:id="@+id/etSubjectCode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Subject Code (e.g., CS101)"
-        android:inputType="text"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Subject Name Input -->
-    <EditText
-        android:id="@+id/etSubjectName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Subject Name (e.g., Data Structures)"
-        android:inputType="text"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Difficulty Rating Input (Scale 1-5) -->
-    <EditText
-        android:id="@+id/etDifficulty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Difficulty Rating (1 to 5)"
-        android:inputType="number"
-        android:layout_marginBottom="24dp" />
-
-    <!-- Save Button -->
-    <Button
-        android:id="@+id/btnSaveSubject"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save Subject" />
-
-</LinearLayout>
+<?xml version='1.0' encoding='utf-8'?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/screenRoot" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+    <Button android:id="@+id/btnBack" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/back" />
+    <TextView android:id="@+id/tvHeading" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/edit_subject" android:textSize="28sp" android:layout_marginBottom="8dp" android:textStyle="bold" android:accessibilityHeading="true" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/subject_code" android:textSize="16sp" android:layout_marginBottom="8dp" android:labelFor="@id/etSubjectCode" />
+    <EditText android:id="@+id/etSubjectCode" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginBottom="16dp" android:inputType="textCapCharacters" android:hint="@string/subject_code_hint" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/subject_name" android:textSize="16sp" android:layout_marginBottom="8dp" android:labelFor="@id/etSubjectName" />
+    <EditText android:id="@+id/etSubjectName" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginBottom="16dp" android:inputType="textCapWords" android:hint="@string/subject_name_hint" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/color_hex" android:textSize="16sp" android:layout_marginBottom="8dp" android:labelFor="@id/etColor" />
+    <EditText android:id="@+id/etColor" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginBottom="16dp" android:inputType="textCapCharacters" android:hint="@string/color_hint" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/difficulty" android:textSize="16sp" android:layout_marginBottom="8dp" android:labelFor="@id/etDifficulty" />
+    <EditText android:id="@+id/etDifficulty" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_marginBottom="16dp" android:inputType="number" />
+    <Button android:id="@+id/btnSaveSubject" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/save_subject" />
+  </LinearLayout>
+</ScrollView>
