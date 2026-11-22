@@ -31,10 +31,10 @@ A successful debug build produces `app/build/outputs/apk/debug/app-debug.apk`. N
 
 ## Included documentation
 
-- [User guide](docs/Study_Boost_User_Guide.md)
-- [Testing and evidence](docs/Study_Boost_Testing.md)
-- [Defect register](docs/Study_Boost_Defects.md)
-- [Improvements and proposal coverage](docs/Study_Boost_Improvements.md)
+- [User guide](Study_Boost_User_Guide.md)
+- [Testing and evidence](Study_Boost_Testing.md)
+- [Defect register](Study_Boost_Defects.md)
+- [Improvements and proposal coverage](Study_Boost_Improvements.md)
 
 ## Verification status
 
