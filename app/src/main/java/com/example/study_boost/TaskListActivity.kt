@@ -3,9 +3,8 @@ package com.example.study_boost
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
+import android.widget.AutoCompleteTextView
 import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,15 +16,15 @@ class TaskListActivity : ScreenActivity() {
     private var subjects = emptyList<Subject>()
     private var query = ""
     private var selectedSubject: Int? = null
-    private var status: String? = null
+    private var status: String? = TaskModel.PENDING
     private var generation = 0
-    private var bindingFilters = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        screen(R.layout.activity_task_list)
+        screen(R.layout.activity_task_list, withBottomNavigation = true)
+        bindBottomNavigation(R.id.nav_tasks)
         query = savedInstanceState?.getString("query").orEmpty()
         selectedSubject = savedInstanceState?.getInt("subject", -1)?.takeIf { it > 0 }
-        status = savedInstanceState?.getString("status")
+        status = savedInstanceState?.getString("status") ?: TaskModel.PENDING
         adapter = TaskAdapter({ edit(it) }, { focus(it) }, { edit(it) }, { toggle(it) }, { remove(it) })
         findViewById<RecyclerView>(R.id.recyclerViewTasks).apply {
             layoutManager = LinearLayoutManager(this@TaskListActivity); adapter = this@TaskListActivity.adapter
@@ -58,10 +57,11 @@ class TaskListActivity : ScreenActivity() {
                 }; load()
             }
         }
-        findViewById<Spinner>(R.id.spinnerSubject).onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) = Unit
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (!bindingFilters) { selectedSubject = subjects.getOrNull(position - 1)?.id; load() }
+        findViewById<AutoCompleteTextView>(R.id.spinnerSubject).apply {
+            setOnClickListener { showDropDown() }
+            setOnItemClickListener { _, _, position, _ ->
+                selectedSubject = subjects.getOrNull(position - 1)?.id
+                load()
             }
         }
     }
@@ -70,13 +70,15 @@ class TaskListActivity : ScreenActivity() {
         database({ it.getSubjects() }) { data ->
             subjects = data
             if (subjects.none { it.id == selectedSubject }) selectedSubject = null
-            bindingFilters = true
-            findViewById<Spinner>(R.id.spinnerSubject).apply {
-                adapter = ArrayAdapter(this@TaskListActivity, android.R.layout.simple_spinner_dropdown_item,
+            findViewById<AutoCompleteTextView>(R.id.spinnerSubject).apply {
+                setAdapter(ArrayAdapter(this@TaskListActivity, android.R.layout.simple_dropdown_item_1line,
                     listOf(getString(R.string.all_subjects)) + subjects.map { it.code + " - " + it.name })
-                setSelection(subjects.indexOfFirst { it.id == selectedSubject } + 1)
+                )
+                val index = subjects.indexOfFirst { it.id == selectedSubject }
+                setText(if (index >= 0) subjects[index].code + " - " + subjects[index].name
+                else getString(R.string.all_subjects), false)
             }
-            bindingFilters = false; load()
+            load()
         }
     }
     override fun onChildSaved(data: Intent?) { load() }

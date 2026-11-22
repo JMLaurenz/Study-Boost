@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-  <application android:allowBackup="true" android:dataExtractionRules="@xml/data_extraction_rules" android:fullBackupContent="@xml/backup_rules" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/Theme.Study_Boost">
+  <application android:allowBackup="true" android:dataExtractionRules="@xml/data_extraction_rules" android:fullBackupContent="@xml/backup_rules" android:icon="@drawable/ic_school" android:label="@string/app_name" android:roundIcon="@drawable/ic_school" android:supportsRtl="true" android:theme="@style/Theme.Study_Boost">
     <activity android:name=".StudyTimerActivity" android:exported="false" android:launchMode="singleTop" android:windowSoftInputMode="adjustResize" />
     <activity android:name=".AddEditTaskActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
     <activity android:name=".AddEditSubjectActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
